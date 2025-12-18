@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 标题 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="专注完成！记录一下吧"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- 任务描述 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="任务描述（可选）"
+            android:layout_marginBottom="4dp"/>
+
+        <EditText
+            android:id="@+id/edit_task_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="例如：复习高数第三章"
+            android:maxLines="2"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- 主观状态标签 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="本次专注的感觉如何？"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <CheckBox
+                android:id="@+id/cb_efficient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="高效"
+                android:layout_marginEnd="12dp"/>
+
+            <CheckBox
+                android:id="@+id/cb_steady"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="平稳"
+                android:layout_marginEnd="12dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <CheckBox
+                android:id="@+id/cb_distracted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="轻微走神"
+                android:layout_marginEnd="12dp"/>
+
+            <CheckBox
+                android:id="@+id/cb_interrupted"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="频繁中断"/>
+
+        </LinearLayout>
+
+        <!-- 环境音信息（只读） -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="本次使用的环境音"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/text_ambient_sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="无"
+            android:textStyle="italic"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- 专注时长信息（只读） -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="专注时长"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/text_session_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="25分钟"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- 按钮区域 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="忽略"
+                android:background="?android:attr/selectableItemBackground"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginEnd="12dp"/>
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="保存记录"
+                android:backgroundTint="@android:color/holo_blue_dark"
+                android:textColor="@android:color/white"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

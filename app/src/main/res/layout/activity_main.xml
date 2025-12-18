@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- GIF 背景图片 -->
+    <ImageView
+        android:id="@+id/gif_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:alpha="0.7" />
+
+    <!-- 主内容区域 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        android:paddingTop="24dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center_horizontal"
+            tools:context=".MainActivity">
+
+            <!-- 标题 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="番茄钟"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="30dp"
+                android:shadowColor="#FFFFFF"
+                android:shadowRadius="2"
+                android:shadowDy="1"
+                android:shadowDx="1"/>
+
+            <!-- 计时器显示区域 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:alpha="0.85"
+                android:padding="20dp"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"
+                android:elevation="4dp">
+
+                <TextView
+                    android:id="@+id/phase_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="准备开始"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#333333"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:id="@+id/timer_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="25:00"
+                    android:textSize="72sp"
+                    android:textStyle="bold"
+                    android:textColor="#2196F3"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:id="@+id/sessions_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="已完成: 0 个番茄钟"
+                    android:textSize="16sp"
+                    android:textColor="#666666"/>
+            </LinearLayout>
+
+            <!-- 计时器控制按钮 -->
+            <!-- 使用线性布局控制按钮大小 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:alpha="0.9"
+                android:padding="8dp"
+                android:layout_marginBottom="20dp"
+                android:elevation="4dp">
+
+                <!-- 第一行 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="4dp">
+
+                    <Button
+                        android:id="@+id/start_button"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginRight="2dp"
+                        android:text="开始"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:backgroundTint="#4CAF50"
+                        android:textColor="#FFFFFF"
+                        android:stateListAnimator="@null"/>
+
+                    <Button
+                        android:id="@+id/pause_button"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginLeft="2dp"
+                        android:text="暂停"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:backgroundTint="#FF9800"
+                        android:textColor="#FFFFFF"
+                        android:stateListAnimator="@null"
+                        android:enabled="false"/>
+
+                </LinearLayout>
+
+                <!-- 第二行 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/reset_button"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="2dp"
+                        android:layout_marginRight="2dp"
+                        android:text="重置"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:backgroundTint="#F44336"
+                        android:textColor="#FFFFFF"
+                        android:stateListAnimator="@null"
+                        android:enabled="false"/>
+
+                    <Button
+                        android:id="@+id/skip_button"
+                        android:layout_width="0dp"
+                        android:layout_height="55dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginLeft="2dp"
+                        android:text="跳过"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:backgroundTint="#2196F3"
+                        android:textColor="#FFFFFF"
+                        android:stateListAnimator="@null"
+                        android:enabled="false"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- 音频控制区域 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:alpha="0.9"
+                android:layout_marginBottom="20dp"
+                android:elevation="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="沉浸式环境音"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#333333"
+                    android:layout_marginBottom="15dp"/>
+
+                <TextView
+                    android:id="@+id/current_sound_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="当前: 无"
+                    android:textSize="14sp"
+                    android:textColor="#666666"
+                    android:layout_marginBottom="15dp"/>
+
+                <!-- 音量控制 -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="音量:"
+                        android:textColor="#333333"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"/>
+
+                    <SeekBar
+                        android:id="@+id/volume_seekbar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:max="100"
+                        android:progress="50"/>
+
+                </LinearLayout>
+
+                <!-- 音效选择 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="选择环境音:"
+                    android:textColor="#333333"
+                    android:layout_marginBottom="8dp"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/sound_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="#F5F5F5"
+                    android:padding="8dp"/>
+
+                <!-- 播放控制按钮 -->
+                <Button
+                    android:id="@+id/toggle_audio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="播放环境音"
+                    android:textSize="14sp"
+                    android:padding="10dp"
+                    android:backgroundTint="#2196F3"
+                    android:textColor="#FFFFFF"
+                    android:layout_gravity="center_horizontal"/>
+
+            </LinearLayout>
+
+            <!-- 统计入口 -->
+            <Button
+                android:id="@+id/btn_stats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="查看统计数据"
+                android:textSize="14sp"
+                android:padding="12dp"
+                android:backgroundTint="#673AB7"
+                android:textColor="#FFFFFF"
+                android:elevation="4dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
