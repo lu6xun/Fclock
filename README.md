@@ -51,7 +51,9 @@
 
 ## 📱 应用截图
 
-
+| 主界面 | 统计界面1 | 统计界面2 |
+|--------|----------|----------|
+| <img src="screenshots/main_ui.png" width="200"> | <img src="screenshots/statistics1.png" width="200"> | <img src="screenshots/statistics2.png" width="200"> |
 
 ## 📥 下载安装
 
